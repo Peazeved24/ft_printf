@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:25:44 by peazeved          #+#    #+#             */
-/*   Updated: 2025/05/02 15:25:44 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/05/08 16:37:33 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);
-int ft_putstr_fd(char *str, int fd);
+int ft_putstr(char *str);
 char	*ft_itoa(int n);
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-int ft_putchar(int c, int fd);
-unsigned int ft_putnbr(unsigned int n);
+int ft_putchar(int c);;
+unsigned int ft_putunsnbr(unsigned int n);
 int ft_strlen(char *str);
-unsigned int ft_hexa(unsigned int n);
-unsigned int ft_hexaUp(unsigned int n);
+int ft_hexa(size_t n);
+int ft_hexaUp(size_t n);
+int ft_putptr(void *ptr);
 #endif

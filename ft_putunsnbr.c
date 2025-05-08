@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putunsnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 16:00:12 by peazeved          #+#    #+#             */
-/*   Updated: 2025/05/02 16:00:12 by peazeved         ###   ########.fr       */
+/*   Created: 2025/05/06 16:03:24 by peazeved          #+#    #+#             */
+/*   Updated: 2025/05/08 16:06:30 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	unsigned char	*p1;
-	unsigned char	*p2;
-	size_t			i;
 
-	p1 = (unsigned char *) s1;
-	p2 = (unsigned char *) s2;
-	i = 0;
-	while (i < n)
-	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
-		i++;
-	}
-	return (0);
+unsigned int ft_putunsnbr(unsigned int n)
+{
+    int count;
+    
+    count = 0;
+    if(n > 9)
+    {
+       count += ft_putunsnbr(n / 10);
+    }
+    count += ft_putchar(n % 10 + '0');
+
+    return count;
 }

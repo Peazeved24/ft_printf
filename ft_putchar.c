@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthcar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:56:11 by peazeved          #+#    #+#             */
-/*   Updated: 2025/05/02 15:56:11 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/05/08 16:03:43 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
 
-int ft_putchar(int c, int fd)
+int ft_putchar(int c)
 {
-   return write(fd, &c, 1);
+   write(1, &c, 1);
+   return 1;
 }
