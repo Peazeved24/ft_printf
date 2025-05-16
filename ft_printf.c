@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:25:37 by peazeved          #+#    #+#             */
-/*   Updated: 2025/05/11 17:13:07 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/05/16 17:28:14 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	ft_printf(const char *format, ...)
 	va_list	pa;
 	int		count;
 
+	if (!format)
+		return (-1);
 	va_start (pa, format);
 	count = 0;
 	while (*format)
