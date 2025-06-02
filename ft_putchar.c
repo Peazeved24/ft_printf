@@ -6,11 +6,11 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:56:11 by peazeved          #+#    #+#             */
-/*   Updated: 2025/05/11 16:15:53 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/06/02 16:47:59 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(int c)
 {

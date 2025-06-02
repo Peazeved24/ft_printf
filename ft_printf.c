@@ -6,16 +6,15 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:25:37 by peazeved          #+#    #+#             */
-/*   Updated: 2025/05/16 17:28:14 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/06/02 16:47:51 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	printf_format(char format, va_list pa)
 {
 	int		count;
-	char	*str;
 
 	count = 0;
 	if (format == 'c')
@@ -25,17 +24,11 @@ static int	printf_format(char format, va_list pa)
 	else if (format == '%')
 		count += ft_putchar('%');
 	else if (format == 'd' || format == 'i')
-	{
-		str = ft_itoa(va_arg(pa, int));
-		count += ft_putstr(str);
-		free(str);
-	}
+		count += ft_putnbr(va_arg(pa, int));
 	else if (format == 'u')
 		count += ft_putunsnbr(va_arg(pa, unsigned int));
-	else if (format == 'x')
-		count += ft_hexa(va_arg(pa, unsigned int));
-	else if (format == 'X')
-		count += ft_hexaup(va_arg(pa, unsigned int));
+	else if (format == 'x' || format == 'X')
+		count += ft_hexa(va_arg(pa, unsigned int), format == 'x');
 	else if (format == 'p')
 		count += ft_putptr(va_arg(pa, void *));
 	return (count);
@@ -64,8 +57,12 @@ int	ft_printf(const char *format, ...)
 
 /*int main()
 {
-    
-    ft_printf("ft_printf:%c", 'a');
+	int x = 10;
+	int *ptr = &x;
+	char *str = NULL;
+
+	
+	ft_printf("ft_printf:%c", 'a');
     printf("\n");
 	printf("printf %c", 'a');
 	printf("\n");
@@ -97,10 +94,18 @@ int	ft_printf(const char *format, ...)
     printf("\n");
 	printf("printf %%");
 	printf("\n");
+	printf("pritnf:%p", ptr);
+	printf("\n");
+	ft_printf("ft_pritnf:%p", ptr);
+	printf("\n");
+	printf("printf%s", str);
+	printf("\n");
+	ft_printf("ft_printf:%s", str);
+	printf("\n");
     ft_printf("ft_print ptr = %p", NULL);
     printf("\n");
     printf(" printf ptr =  %p", NULL);
     printf("\n");
-
+	
     return 0;
 }*/
