@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:48:17 by peazeved          #+#    #+#             */
-/*   Updated: 2025/06/02 16:47:43 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/06/03 20:05:32 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	ft_hexa(size_t n, int s)
 	int		count;
 
 	count = 0;
-	if(s == 1)
+	if (s == 1)
 		hex_digits = "0123456789abcdef";
-	else if(s == 0)
+	else if (s == 0)
 		hex_digits = "0123456789ABCDEF";
 	if (n >= 16)
 		count += ft_hexa(n / 16, s);
