@@ -6,18 +6,21 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 20:07:13 by peazeved          #+#    #+#             */
-/*   Updated: 2025/06/03 20:09:01 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/06/09 17:18:54 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+long	ft_putnbr(long n)
 {
 	int	count;
 
 	count = 0;
-	if (n == -2147483648)
+
+	if (n > INT_MAX  || n < INT_MIN)
+		return 0;
+	if (n == INT_MIN)
 	{
 		count += write(1, "-2147483648", 11);
 		return (count);

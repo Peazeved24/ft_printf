@@ -6,7 +6,7 @@
 /*   By: peazeved <peazeved@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 15:25:37 by peazeved          #+#    #+#             */
-/*   Updated: 2025/06/02 16:47:51 by peazeved         ###   ########.fr       */
+/*   Updated: 2025/06/09 17:25:59 by peazeved         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	pa;
 	int		count;
-
+	
 	if (!format)
 		return (-1);
 	va_start (pa, format);
@@ -55,57 +55,10 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-/*int main()
+int main()
 {
-	int x = 10;
-	int *ptr = &x;
-	char *str = NULL;
+	
+	ft_printf("ft_printf: %d", 2147483648);
+	printf("\n");
 
-	
-	ft_printf("ft_printf:%c", 'a');
-    printf("\n");
-	printf("printf %c", 'a');
-	printf("\n");
-    ft_printf("ft_printf:%s", "ola");
-    printf("\n");
-	printf("printf %s", "ola");
-	printf("\n");
-    ft_printf("ft_printf:%d", -123);
-    printf("\n");
-	printf("printf %d", -123);
-	printf("\n");
-    ft_printf("ft_printf:%i", 123);
-    printf("\n");
-	printf("printf %i",123);
-	printf("\n");
-    ft_printf("ft_printf:%u", -1);
-	printf("\n");
-	printf("printf %u", -1);
-    printf("\n");
-    ft_printf("ft_printf: %x", 255);
-    printf("\n");
-	printf("printf : %x", 255);
-	printf("\n");
-    ft_printf("ft_printf:%X", 255);
-    printf("\n");
-	printf("printf:%X", 255);
-	printf("\n");
-    ft_printf("ft_printf:%%");
-    printf("\n");
-	printf("printf %%");
-	printf("\n");
-	printf("pritnf:%p", ptr);
-	printf("\n");
-	ft_printf("ft_pritnf:%p", ptr);
-	printf("\n");
-	printf("printf%s", str);
-	printf("\n");
-	ft_printf("ft_printf:%s", str);
-	printf("\n");
-    ft_printf("ft_print ptr = %p", NULL);
-    printf("\n");
-    printf(" printf ptr =  %p", NULL);
-    printf("\n");
-	
-    return 0;
-}*/
+}
